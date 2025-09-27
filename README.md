@@ -1,100 +1,89 @@
-# Anonymous CheckIn System
+# PrivacyLottery
 
-A fully homomorphic encryption (FHE) enabled privacy-preserving meeting check-in platform on FHEVM, providing encrypted participant verification while ensuring complete privacy and anonymity.
+A privacy-first decentralized lottery platform built on Ethereum, allowing anyone to create and participate in lotteries with complete fairness and transparency. Using on-chain randomness and wallet-based participation, PrivacyLottery ensures secure, anonymous, and verifiable lottery operations.
 
 ## Live Demo
 
-Try the live application: [https://zama-fhe-anonymous-check-in.vercel.app/](https://zama-fhe-anonymous-check-in.vercel.app/)
+Try the live application: [https://privacy-lottery.vercel.app/](https://privacy-lottery.vercel.app/)
 
-![界面截图](./image.png)
+![image](./image1.png)
 
-## Project Background  
+![image](./image2.png)
 
-In traditional meeting systems, participant privacy is a significant concern as all attendance information is exposed during the check-in process. This creates several challenges:
+## Project Background
 
-- Participant privacy concerns: Personal attendance records are visible to others
-- Identity exposure risks: Malicious actors can exploit visible participant information
-- Lack of true anonymity: Sensitive participation patterns are exposed
-- Trust issues: Participants cannot verify the fairness of the attendance recording
+Traditional online lotteries often face problems of transparency, fairness, and privacy:
 
-Anonymous CheckIn System leverages Fully Homomorphic Encryption (FHE) technology to revolutionize meeting attendance tracking. By performing all participant verification on encrypted data directly on-chain, the system ensures:
+- Lack of trust: Users cannot be sure if the lottery is fair
+- Identity exposure: Participants’ wallet addresses or personal details may be linked
+- Centralized risks: Operators may manipulate results
+- Limited verification: Results cannot always be independently verified
 
-- Complete privacy of all participants throughout the meeting
-- Automatic attendance verification without revealing individual identities
-- Transparent and verifiable attendance records
-- Immutable records that cannot be altered after meeting completion
-- Trustless environment where final attendance can be verified by anyone
+PrivacyLottery solves these challenges with a blockchain-based lottery system where:
+
+- All actions (creation, participation, drawing winners) are executed via smart contracts
+- Winners are selected using verifiable on-chain randomness
+- Participant privacy is protected — only necessary information is revealed
+- The entire process is transparent, immutable, and trustless
 
 ## Features
 
 ### Core Functionality
 
-- Anonymous Check-in: Verify attendance while maintaining participant anonymity
-- Meeting Creation: Create meetings with custom parameters and privacy settings
-- Real-time Statistics: View encrypted attendance statistics during active meetings
-- Meeting Management: Create, manage, and end meetings with administrative controls
-- Batch Processing: Handle multiple meetings and participants efficiently
-- FHEVM Integration: On-chain participant verification ensures trust and integrity
+- Lottery Creation: Set up a new lottery with prize description and deadline
+- Participation: Join any active lottery using your Ethereum wallet
+- Fair Draw: Random winners selected through on-chain randomness
+- Result Transparency: Winners are revealed immediately after the draw
+- Real-time Dashboard: View active, completed, and total lotteries with stats
 
-### Privacy & Security
+### Privacy & Fairness
 
-- Fully Encrypted Verification: All participant IDs remain encrypted throughout the meeting
-- Zama FHE Technology: Industry-leading fully homomorphic encryption
-- Blind Attendance Process: Participants cannot see others' identities during active meetings
-- Post-Meeting Transparency: Full attendance revelation after meeting completion for verification
-- Wallet Authentication: Secure access control through Ethereum wallets
+- Anonymous Participation: Users join without revealing sensitive personal data
+- Verifiable Randomness: Ensures fair and unbiased winner selection
+- Immutable Records: Lottery history cannot be altered once created
+- Wallet Authentication: Secure participation through Ethereum wallets
 
 ## Architecture
 
 ### Smart Contracts
 
-AnonymousCheckIn.sol - Main Meeting Contract
+Lottery.sol (deployed on Ethereum)
 
-- Manages meeting creation, check-in, and termination using FHE operations
-- Stores encrypted participant data on-chain during active meetings
-- Provides automatic attendance verification
-- Handles batch processing of multiple meetings
-- Maintains pseudonymous participant identifiers for privacy
+- Manages lottery creation, participation, and winner selection
+- Ensures deadlines and rules are enforced automatically
+- Handles participant tracking and prize distribution
+- Provides transparent lottery state for all users
 
 ### Frontend Application
 
-- React + TypeScript: Modern user interface with Web3 design theme
-- Ethers.js: Blockchain interaction and wallet integration
-- Vite: Fast build and hot reload development environment
-- Wallet Integration: Connect various Ethereum wallets seamlessly
-- Responsive Design: Optimized for desktop and mobile devices
-- Real-time Updates: Instant reflection of new meetings and attendance
-- Data Visualization: Interactive display of meeting statistics and results
+- React + TypeScript: Interactive and responsive UI
+- Ethers.js: Wallet integration and blockchain interaction
+- Modern UI/UX: Dashboard with statistics, tabs, and animations
+- Wallet Management: Connect, switch, and disconnect seamlessly
+- Real-time Updates: Fetches lottery states directly from blockchain
 
 ## Technology Stack
 
 ### Blockchain
 
 - Solidity ^0.8.24: Smart contract development
-- Zama FHE: Fully Homomorphic Encryption library
-- FHEVM: Fully Homomorphic Encryption Virtual Machine
-- OpenZeppelin: Secure contract libraries for access control
-- Hardhat: Development and deployment framework
+- OpenZeppelin: Secure libraries for contract design
+- Hardhat: Development, testing, and deployment framework
+- Ethereum Sepolia Testnet: Current deployment network
 
 ### Frontend
 
 - React 18 + TypeScript: Modern frontend framework
-- Vite: Build tool and development server
 - Ethers.js: Ethereum blockchain interaction
-- Chart.js: Data visualization for meeting statistics
-- React Icons: Comprehensive icon library
-- Web3 UI Design: Modern decentralized application interface
-
-### Infrastructure
-
+- React Icons: Icon library for UI/UX
+- Tailwind + CSS: Styling and layout
 - Vercel: Frontend deployment platform
-- Sepolia Testnet: Ethereum test network for development
 
 ## Installation
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm / yarn / pnpm package manager
 - Ethereum wallet (MetaMask, WalletConnect, etc.)
 
@@ -102,8 +91,8 @@ AnonymousCheckIn.sol - Main Meeting Contract
 
 ```bash
 # Clone the repository
-git clone https://github.com/kqqdhrxd-society/zama-fhe-anonymousCheckIn.git
-cd zama-fhe-anonymousCheckIn
+git clone https://github.com/cloud-until/privacy-lottery.git
+cd privacy-lottery
 
 # Install dependencies
 npm install
@@ -126,28 +115,25 @@ npm run dev
 
 ## Usage
 
-- Connect Wallet: Click the "Connect Wallet" button and select your preferred Ethereum wallet
-- Create Meeting: Click "New Meeting" to create a new meeting with details and privacy settings
-- Check In Anonymously: Submit encrypted participant IDs that remain private
-- Monitor Meetings: View active meetings with real-time encrypted statistics
-- End Meeting: Meeting creators can terminate meetings to finalize attendance
-- View Results: After completion, see attendance statistics and verification
+- Connect Wallet: Click the "Connect Wallet" button and select your wallet
+- Create Lottery: Define prize description and deadline, then confirm on-chain
+- Participate: Join an active lottery with one click
+- Draw Winner: Lottery creators can trigger random winner selection after the deadline
+- View Results: See winner information once the lottery is completed
 
 ## Security Features
 
-- All participant data is encrypted using FHE during the meeting
-- Individual identities remain hidden until meeting completion
-- Only attendance statistics are revealed post-meeting
-- Meeting results stored immutably on-chain for verification
-- Transparent post-meeting attendance revelation ensures fairness
+- On-chain randomness ensures unbiased winner selection
+- Immutable records guarantee lottery integrity
+- No centralized authority can manipulate results
+- Wallet-based access secures participation
 
 ## Future Enhancements
 
-- Advanced meeting types (private events, exclusive sessions)
-- Multi-platform support for web and mobile check-ins
-- Cross-chain deployment for broader accessibility
-- Mobile application for on-the-go check-in
-- Integration with calendar systems
-- DAO governance for platform improvements
+- Multi-chain deployment for broader accessibility
+- Prize distribution with ERC20 tokens or NFTs
+- Advanced lottery types (raffles, multi-winner draws)
+- Mobile-friendly optimized interface
+- DAO governance for community-driven improvements
 
-Built with ❤️ using Zama FHE Technology
+Built with ❤️ for a fair and private lottery experience on Ethereum
