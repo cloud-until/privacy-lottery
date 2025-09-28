@@ -4,7 +4,7 @@ A privacy-first decentralized lottery platform built on Ethereum, allowing anyon
 
 ## Live Demo
 
-Try the live application: [https://privacy-lottery.vercel.app/](https://privacy-lottery.vercel.app/)
+Try the live application: [https://privacy-lottery.netlify.app/](https://privacy-lottery.netlify.app/)
 
 ![image](./image1.png)
 
